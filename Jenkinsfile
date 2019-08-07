@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                input message: 'Finished using the web site? (Click "OK" to continue)'
                 sh './jenkins/scripts/test.sh'
             }
         }
@@ -26,7 +26,6 @@ pipeline {
             }
             steps {
                 sh './jenkins/scripts/deliver-for-development.sh'
-                input message: 'Finished using the web site? (Click "OK" to continue)'
                 sh './jenkins/scripts/kill.sh'
             }
         }
