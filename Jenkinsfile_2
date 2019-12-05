@@ -19,7 +19,7 @@ pipeline {
         stage('ConsiderNextAction') {
            steps {
            script {
-                     if $env.CHOICE == 'One') {
+                     if $params.CHOICE == 'One') {
             echo 'this is One'
         }else{
             echo 'this is Two'
