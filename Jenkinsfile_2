@@ -17,17 +17,15 @@ pipeline {
     }
     stages {
         stage('ConsiderNextAction') {
-            when { environment name: 'CHOICE', value: 'One' }
-            steps {
-                echo "Hello One"
-            }
-            when { environment name: 'CHOICE', value: 'Two' }
-            steps {
-                echo "Hello Two"
-            }
-            when { environment name: 'CHOICE', value: 'Three' }
-            steps {
-                echo "Hello Three"}
-            }
+           scripts {
+                     if (${params.CHOICE} == 'One') {
+            echo 'this is One'
+        } elif (${params.CHOICE} == 'Two') {
+            echo 'this is Two'
+        } else {
+            echo 'this is Three'
+        }
+           } 
+    }
     }
 }
