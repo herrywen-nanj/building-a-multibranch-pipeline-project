@@ -11,7 +11,8 @@ pipeline {
 
 
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
-
+        
+        choice(name: 'CHOICE2', choices: ['1', '2', '3'], description: '123123123123')
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
@@ -20,9 +21,10 @@ pipeline {
            steps {
            script {
                      if (params.CHOICE == 'One') {
-            echo 'this is One'
+                     echo "最后的变量是${params.CHOICE}  ${params.CHOICE2}"
         }else if (params.CHOICE == 'Two'){
-            echo 'this is Two'
+                      content = "asdasd"
+                      echo 'this is Two' + content
         }else {
              echo 'this is Three'
              }
