@@ -18,12 +18,14 @@ pipeline {
     stages {
         stage('ConsiderNextAction') {
            steps {
+           script {
                      if (${params.CHOICE} == 'One') {
             echo 'this is One'
         }else (${params.CHOICE} == 'Two')  {
             echo 'this is Two'
         }
            } 
+    }
     }
     }
 }
