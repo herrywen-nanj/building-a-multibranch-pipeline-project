@@ -16,22 +16,18 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
     stages {
-        stage('Example') {
+        stage('ConsiderNextAction') {
+            when { environment name: 'CHOICE', value: 'One' }
             steps {
-                echo "Hello ${params.PERSON}"
-
-
-                echo "Biography: ${params.BIOGRAPHY}"
-
-
-                echo "Toggle: ${params.TOGGLE}"
-
-
-                echo "Choice: ${params.CHOICE}"
-
-
-                echo "Password: ${params.PASSWORD}"
+                echo "Hello One"
             }
-        }
+            when { environment name: 'CHOICE', value: 'Two' }
+            steps {
+                echo "Hello Two"
+            }
+            when { environment name: 'CHOICE', value: 'Three' }
+            steps {
+                echo "Hello Three"}
+            }
     }
 }
