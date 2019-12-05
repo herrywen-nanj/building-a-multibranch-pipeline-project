@@ -17,7 +17,7 @@ pipeline {
     }
     stages {
         stage('ConsiderNextAction') {
-           script {
+           steps {
                      if (${params.CHOICE} == 'One') {
             echo 'this is One'
         }else (${params.CHOICE} == 'Two')  {
