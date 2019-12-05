@@ -21,9 +21,11 @@ pipeline {
            script {
                      if (params.CHOICE == 'One') {
             echo 'this is One'
-        }else{
+        }else if (params.CHOICE == 'Two'){
             echo 'this is Two'
-        }
+        }else {
+             echo 'this is Three'
+             }
            } 
     }
     }
