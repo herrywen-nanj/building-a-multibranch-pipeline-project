@@ -23,10 +23,9 @@ pipeline {
                      if (params.CHOICE == 'One') {
                      echo "最后的变量是${params.CHOICE}  ${params.CHOICE2}"
         }else if (params.CHOICE == 'Two'){
-                      content = "asdasd"
-                      echo 'this is Two' + content
+                     echo "最后的变量是${params.CHOICE}  ${params.CHOICE2}"
         }else {
-             echo 'this is Three'
+             echo "最后的变量是${params.CHOICE}  ${params.CHOICE2}"
              }
            } 
     }
