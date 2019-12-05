@@ -20,12 +20,9 @@ pipeline {
            script {
                      if (${params.CHOICE} == 'One') {
             echo 'this is One'
-        }if (${params.CHOICE} == 'Two')  {
+        }else (${params.CHOICE} == 'Two')  {
             echo 'this is Two'
-        }if (${params.CHOICE} == 'Three')  {
-            echo 'this is Three'
         }
-        
            } 
     }
     }
